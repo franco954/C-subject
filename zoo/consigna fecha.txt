@@ -1,0 +1,22 @@
+
+FECHA ENTREGA 12/09
+
+
+
+Estás desarrollando un programa para un zoológico que necesita llevar un registro básico de la salud de los animales. 
+Cada animal tiene tres parámetros de salud clave: 
+nivel de energía (entre 0 y 100), 
+cantidad de alimento consumido (en gramos, entre 0 y 1000),
+ y cantidad de agua bebida (en mililitros, entre 0 y 5000). 
+
+
+El programa debe permitir al usuario ingresar estos valores para un animal en particular 
+y luego evaluar su estado de salud basado en los siguientes criterios:
+
+
+Si l nivel de energía es mayor o igual a 70 y el animal ha consumido al menos 500 gramos de alimento y 2000 ml de agua, el programa debe imprimir "El animal está en perfecto estado de salud".
+Si el nivel de energía es menor a 70 pero el animal ha consumido al menos 500 gramos de alimento y 2000 ml de agua, el programa debe imprimir "El animal necesita descansar más".
+Si el nivel de energía es mayor o igual a 70 pero el animal ha consumido menos de 500 gramos de alimento o menos de 2000 ml de agua, el programa debe imprimir "El animal necesita comer y beber más".
+Si cualquiera de los tres parámetros está por debajo de la mitad de su rango (energía < 50, alimento < 500 gramos, agua < 2500 ml), el programa debe imprimir "El animal está en estado crítico".
+
+Además, si el nivel de energía es 100, el programa debe imprimir "¡El animal está lleno de energía!" como mensaje adicional.

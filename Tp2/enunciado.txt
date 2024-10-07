@@ -1,0 +1,18 @@
+
+
+
+
+Realizar Diagrama de Flujo y Código en C de los siguientes ejercicios.
+1. Ingresar dos valores, indicar e imprimir si son iguales.
+2. Ingresar un valor indicar e imprimir si es positivo, negativo o cero.
+3. Ingresar dos valores y realizar e imprimir el producto (multiplicación) si el 1ro es mayor al
+2do, si son iguales solo indicarlo.
+4. Ingresar dos valores y realizar e imprimir la resta del mayor menos el menor.
+5. Ingresar los tres lados de un triángulo e indicar que tipo de triángulo es.
+6. Ingresar la edad y la altura de dos personas, indicar e imprimir la estatura del de mayor
+edad. Indicar si son iguales.
+7. Ingresar el valor de la hora y el tiempo trabajado por un empleado, calcular su sueldo
+conociendo que recibe un premio de $ 100 si trabajo más de 50 hs y si trabajo más de 150
+hs le dan otros $ 100 adicionales. Imprimir el sueldo
+8. Ingresar tres valores correspondientes al día, mes y año de una fecha, indicar si es válida,
+considerar los años bisiestos 

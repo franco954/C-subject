@@ -1,0 +1,8 @@
+agregar while general al del zoo
+validar con while el valor de la energia que vaya de 0 a 100
+agregar validaciones a todos los datos ingresados para que no sevya en valores
+
+fflush(stdin)
+hacer que no sea case sensitive en el S/N
+
+ 
