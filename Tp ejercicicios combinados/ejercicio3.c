@@ -18,28 +18,132 @@
 // h. Imprimir ordenado en forma descendente por sueldo de los analista:nombre valor
 // de la hora y sueldo
 
-
 #include <stdio.h>
 
+#define NUM_ANALISTAS 10
+#define NUM_PROYECTOS 15
 
-int main(int argc, char const *argv[])
+int main()
 {
-    
-    int analistas[10] = {1,2,3,4,5,6,7,8,9,10};
-    int hsProyectos[15] = {};
-    int vh = 100;
 
-    for (size_t i = 0; i < 10; i++)
+    char *analistas[NUM_ANALISTAS] = {"Juan", "Maria", "Carlos", "Ana", "Luis",
+                                      "Pedro", "Sofia", "Miguel", "Laura", "David"};
+
+    int valorHora = 100;
+    int horasTrabajadas[NUM_ANALISTAS][NUM_PROYECTOS] = {{0}};
+    int totalHorasAnalista[NUM_ANALISTAS] = {0};
+    int totalHorasProyecto[NUM_PROYECTOS] = {0};
+    int sueldos[NUM_ANALISTAS] = {0};
+
+    for (int i = 0; i < NUM_ANALISTAS; i++)
     {
-        printf("Planilla mes del analista n%d", analistas[i]);
-        printf("Proyecto trabajado: ");
+        printf("\nPlanilla del analista %s:\n", analistas[i]);
+        for (int j = 0; j < NUM_PROYECTOS; j++)
+        {
+            printf("Horas trabajadas en el Proyecto %d: ", j + 1);
+            scanf("%d", &horasTrabajadas[i][j]);
+
+            totalHorasAnalista[i] += horasTrabajadas[i][j];
+
+            totalHorasProyecto[j] += horasTrabajadas[i][j];
+        }
     }
-    
 
+    for (int i = 0; i < NUM_ANALISTAS; i++)
+    {
+        sueldos[i] = totalHorasAnalista[i] * valorHora;
+    }
 
+    printf("\nTotal de horas trabajadas por cada analista:\n");
+    for (int i = 0; i < NUM_ANALISTAS; i++)
+    {
+        printf("%s: %d horas\n", analistas[i], totalHorasAnalista[i]);
+    }
 
+    printf("\nTotal de horas trabajadas por cada analista en cada proyecto:\n");
+    for (int i = 0; i < NUM_ANALISTAS; i++)
+    {
+        printf("%s:\n", analistas[i]);
+        for (int j = 0; j < NUM_PROYECTOS; j++)
+        {
+            printf("  Proyecto %d: %d horas\n", j + 1, horasTrabajadas[i][j]);
+        }
+    }
 
+    printf("\nTotal de horas trabajadas en cada proyecto:\n");
+    for (int j = 0; j < NUM_PROYECTOS; j++)
+    {
+        printf("Proyecto %d: %d horas\n", j + 1, totalHorasProyecto[j]);
+    }
 
+    int minHoras = horasTrabajadas[0][0];
+    int analistaMenosHoras = 0;
+    for (int i = 1; i < NUM_ANALISTAS; i++)
+    {
+        if (horasTrabajadas[i][0] < minHoras)
+        {
+            minHoras = horasTrabajadas[i][0];
+            analistaMenosHoras = i;
+        }
+    }
+    printf("\nEl analista que trabajó menos en el Proyecto 1 es %s con %d horas.\n",
+           analistas[analistaMenosHoras], minHoras);
+
+    printf("\nSueldo de cada analista:\n");
+    for (int i = 0; i < NUM_ANALISTAS; i++)
+    {
+        printf("%s: $%d\n", analistas[i], sueldos[i]);
+    }
+
+    int maxSueldo = sueldos[0];
+    int analistaMasCobra = 0;
+    for (int i = 1; i < NUM_ANALISTAS; i++)
+    {
+        if (sueldos[i] > maxSueldo)
+        {
+            maxSueldo = sueldos[i];
+            analistaMasCobra = i;
+        }
+    }
+    printf("\nEl analista que cobró más es %s con $%d.\n", analistas[analistaMasCobra], maxSueldo);
+
+    int analistasMenos5Horas = 0;
+    for (int i = 0; i < NUM_ANALISTAS; i++)
+    {
+        for (int j = 0; j < NUM_PROYECTOS; j++)
+        {
+            if (horasTrabajadas[i][j] < 5)
+            {
+                analistasMenos5Horas++;
+                break;
+            }
+        }
+    }
+    printf("\nCantidad de analistas que trabajaron menos de 5 horas en algún proyecto: %d\n", analistasMenos5Horas);
+
+    printf("\nAnalistas ordenados por sueldo (de mayor a menor):\n");
+    for (int i = 0; i < NUM_ANALISTAS - 1; i++)
+    {
+        for (int j = i + 1; j < NUM_ANALISTAS; j++)
+        {
+            if (sueldos[i] < sueldos[j])
+            {
+
+                int tempSueldo = sueldos[i];
+                sueldos[i] = sueldos[j];
+                sueldos[j] = tempSueldo;
+
+                char *tempAnalista = analistas[i];
+                analistas[i] = analistas[j];
+                analistas[j] = tempAnalista;
+            }
+        }
+    }
+
+    for (int i = 0; i < NUM_ANALISTAS; i++)
+    {
+        printf("%s, Valor hora: $%d, Sueldo: $%d\n", analistas[i], valorHora, sueldos[i]);
+    }
 
     return 0;
 }

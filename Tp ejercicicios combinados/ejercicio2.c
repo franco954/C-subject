@@ -5,6 +5,8 @@
 // de algoritmo quiere utilizar por medio de un menú (debe ser búsqueda binaria o secuencial).
 
 
+
+
 #include <stdio.h>
 
 int busqueda_secuencial(int arr[], int n, int objetivo) {
