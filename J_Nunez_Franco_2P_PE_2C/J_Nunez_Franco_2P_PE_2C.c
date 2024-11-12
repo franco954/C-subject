@@ -63,9 +63,6 @@ void ingresarRegistro(int *tDias, int *lDias) {
     printf("Registro ingresado correctamente para el día %d.\n", dia);
 }
 
-
-
-
 void consultarRegistro(int *tDias, int *lDias) {
     int dia;
 
@@ -115,8 +112,6 @@ void modificarRegistro(int *tDias, int *lDias) {
     }
 }
 
-
-
 void mostrarPromediosTyL(int *tDias, int *lDias) {
     int lluviasD = 0, TemperaturasD = 0, cDias = 0;
     float pLluvias = 0, pTemperatura = 0;
@@ -141,7 +136,6 @@ void mostrarPromediosTyL(int *tDias, int *lDias) {
         printf("No hay datos ingresados.\n");
     }
 }
-
 
 
 void diasTempInfValor(int *tDias, int *lDias) {
